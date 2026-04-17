@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variedades Yone | Tienda Oficial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primario: #d4a373;
+            --oscuro: #1a1a1a;
+            --blanco: #ffffff;
+            --gris: #f4f4f4;
+            --verde: #25d366;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+
+        body { background-color: var(--blanco); color: var(--oscuro); overflow-x: hidden; }
+
+        /* --- ENCABEZADO --- */
+        header { 
+            padding: 2.5rem 0; 
+            text-align: center; 
+            border-bottom: 1px solid var(--gris); 
+            margin-bottom: 2rem; 
+            background: white;
+        }
+
+        .logo-container { margin-bottom: 15px; }
+        
+        .logo-img {
+            width: 100px; /* Tamaño del logo */
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%; /* Logo circular */
+            border: 3px solid var(--primario);
+            background-color: var(--gris);
+        }
+
+        .logo { 
+            font-weight: 600; 
+            font-size: 1.8rem; 
+            color: var(--primario); 
+            letter-spacing: 2px; 
+            text-transform: uppercase;
+        }
+
+        /* --- SECCIÓN CATÁLOGO --- */
+        #seccion-catalogo { display: block; padding: 20px 5%; }
+
+        .grid-productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: 0.4s;
+            border: 1px solid var(--gris);
+        }
+
+        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+        .card img { width: 100%; height: 300px; object-fit: cover; }
+        .card-info { padding: 20px; text-align: center; }
+
+        /* --- SECCIÓN DETALLES --- */
+        #seccion-detalle {
+            display: none; 
+            padding: 40px 5%;
+            animation: entrar 0.5s ease forwards;
+        }
+
+        @keyframes entrar {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .detalle-container {
+            max-width: 900px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            background: white;
+            padding: 30px;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        .detalle-img img { width: 100%; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        
+        .detalle-info { display: flex; flex-direction: column; justify-content: center; }
+        .detalle-info h1 { font-size: 2rem; color: var(--primario); margin-bottom: 15px; }
+        .detalle-info p { line-height: 1.8; color: #555; margin-bottom: 25px; text-align: justify; }
+
+        .btn-volver {
+            display: inline-block;
+            margin-bottom: 25px;
+            color: var(--primario);
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-volver:hover { color: var(--oscuro); }
+
+        .btn-wa {
+            background: var(--verde);
+            color: white;
+            text-align: center;
+            padding: 18px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            display: block;
+        }
+
+        .btn-wa:hover { background: #1ebd58; transform: translateY(-3px); }
+
+        footer { text-align: center; padding: 4rem 2rem; color: #bbb; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <section id="seccion-catalogo">
+        <header>
+            <div class="logo-container">
+                <img src="copia6.png" alt="Logo Variedades Yone" class="logo-img">
+            </div>
+            <div class="logo">VARIEDADES YONE</div>
+            <p style="color: #999; margin-top: 5px;">Donde Yone, Calidad precio 🌟</p>
+            <p style="color: #999; margin-top: 5px;">Se sacan copias de calidad E impresiones de la mejor manera</p>
+        </header>
+
+        <div class="grid-productos">
+            <div class="card" onclick="mostrarDetalle('Catalogo 1: Joyas', 'como primera sección podemos encontrar joyerías de todo precio y difrentes tipo de joyas, por ejemplo pulseras con adornos muy llamativo, podemos encontrar cadenas de color amarillo llamativo elegante si buscar un poco mas urbano también lo podras conseguir en Variedades Yone, también tenemos piercing de oreja de ombligo entre otro RECUERDA QUE EN VARIEDADES YONE ENCONTRAR CALIDAD PRECIO GRACIAS .', 'copia1.jpeg')">
+                <img src="copia1.jpeg" alt="Producto 1">
+                <div class="card-info">
+                    <h3>Catalogo Detallado 1</h3>
+                    <small>Ver detalles y descripción</small>
+                </div>
+            </div>
+
+            <div class="card" onclick="mostrarDetalle('Catalogo 2: manucure y pedicure', 'como segunda sección podemos encontrar productos de adorno del cabello de la mujer, podemos encontrar productos de manicure y pedicure, productos frecuentes en una oficina como huellero, perforadora de papel. No se te olvide que en variedades Yone siempre encontraras calidad precio .', 'copia2.jpeg')">
+                <img src="copia2.jpeg" alt="Producto 2">
+                <div class="card-info">
+                    <h3>Catalogo Destacado 2</h3>
+                    <small>Ver detalles y descripción</small>
+                </div>
+            </div>
+
+            <div class="card" onclick="mostrarDetalle('Catalogo 3: utiles escolares', 'Como tercera y ultima sección encontramos productos donde los estudiantes pueden encontrar variedades de productos escolares, y otros productos relacionados como cumpleaños, productos para niñas, etc, y como todo cliente busca la economía variedades Yone tiena la mejor calidad precio ', 'copia3.jpeg')">
+                <img src="copia3.jpeg" alt="Producto 3">
+                <div class="card-info">
+                    <h3>Catalogo Destacado 3</h3>
+                    <small>Ver detalles y descripción</small>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            &copy; 2026 Variedades Yone - Hecho con amor <br>
+            Puerto rico Tiquiso - Barrio el recreo Frente al polideportivo
+        </footer>
+    </section>
+
+    <section id="seccion-detalle">
+        <div style="max-width: 900px; margin: auto;">
+            <div class="btn-volver" onclick="volverAlCatalogo()">← Volver al catálogo</div>
+            
+            <div class="detalle-container">
+                <div class="detalle-img">
+                    <img id="img-detalle" src="" alt="Imagen del producto">
+                </div>
+                <div class="detalle-info">
+                    <h1 id="titulo-detalle"></h1>
+                    <p id="desc-detalle"></p>
+                    <a id="link-wa" href="#" class="btn-wa" target="_blank">Pedir por WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const catalogo = document.getElementById('seccion-catalogo');
+        const detalle = document.getElementById('seccion-detalle');
+
+        function mostrarDetalle(nombre, info, rutaImagen) {
+            // Llenamos la información en la sección de detalles
+            document.getElementById('titulo-detalle').innerText = nombre;
+            document.getElementById('desc-detalle').innerText = info;
+            document.getElementById('img-detalle').src = rutaImagen;
+            
+            // Configuramos el link de WhatsApp con el número que proporcionaste
+            document.getElementById('link-wa').href = `https://wa.me/573122062081?text=¡Hola Variedades Yone! Me interesa este producto: ${nombre}`;
+
+            // Ocultamos catálogo y mostramos detalle con efecto suave
+            catalogo.style.display = 'none';
+            detalle.style.display = 'block';
+            window.scrollTo(0, 0); 
+        }
+
+        function volverAlCatalogo() {
+            detalle.style.display = 'none';
+            catalogo.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
